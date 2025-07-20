@@ -24,8 +24,10 @@ const traitOptions = [
 const Onboard = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
+
   const [formData, setFormData] = useState({
-    name: "Alex Johnson", // Pre-filled from mock Google account
+    name: user.name || "", 
     age: "",
     gender: "",
     genZMode: true,
